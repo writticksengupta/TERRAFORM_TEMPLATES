@@ -1,4 +1,6 @@
+
 ssh-keygen -t ed25519 
+#go to folder where abc.pem is present
 ssh -i abc.pem ubuntu@3.17.25.180
 chmod 400 abc.pem
 
