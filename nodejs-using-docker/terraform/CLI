@@ -1,0 +1,4 @@
+ssh-keygen -t ed25519 
+ssh -i abc.pem ubuntu@3.17.25.180
+chmod 400 abc.pem
+
