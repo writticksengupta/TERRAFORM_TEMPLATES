@@ -1,0 +1,57 @@
+#create a folder mkdir docker
+touch package.json
+vim package.json
+
+#inside package.json
+{
+"name": "docker_web_app",
+"version": "1.0.0",
+"description": "Node.js on Docker",
+"main": "server.js",
+"scripts":{
+	"start": "node server.js"
+},
+"dependencies":{
+	"express": "^4.16.1"
+}
+}
+npm install
+#if using npm version 5+, this will generate package-lock.json which is copied to docker image.so use COPY package*.json in ./ directory in container
+
+touch server.js
+vim server.js
+
+
+#inside server.js
+'use strict';
+const express = require('express');
+//constants
+const PORT = 8085;
+const HOST = '0.0.0.0';
+//app
+const app = express();
+app.get('/', (req,res) => {
+res.send('Hello World');
+});
+app.listen(PORT, HOST);
+console.log('Running on http://${HOST}:${PORT}');
+
+#create docker file
+touch Dockerfile
+vim Dockerfile
+
+#inside dockerfile
+FROM node
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 8085
+CMD [ "node", "server.js" ]
+
+sudo docker image build -t ubuntu/node-web-app:v1 .
+sudo docker container run -p 8082:8085 -d 581941a0a359
+curl -i localhost:8082
+
+
+
