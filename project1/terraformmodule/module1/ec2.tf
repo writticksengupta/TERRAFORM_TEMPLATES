@@ -35,6 +35,7 @@ resource "aws_security_group" "security_group" {
     #value = "${aws_security_group.security_group.id}"
   
 #}
+#optional bastion host
 resource "aws_instance" "public_instance" {
   ami           = "ami-05803413c51f242b7"
   instance_type = "t2.micro"
