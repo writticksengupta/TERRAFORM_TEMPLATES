@@ -36,17 +36,17 @@ resource "aws_security_group" "security_group" {
   
 #}
 #optional bastion host
-resource "aws_instance" "public_instance" {
-  ami           = "ami-05803413c51f242b7"
-  instance_type = "t2.micro"
-  subnet_id = "${aws_subnet.public_subnet.id}"
-  key_name = "abc"
-  #need one instance
-  count = 1
-  vpc_security_group_ids = ["${aws_security_group.security_group.id}"]
-  associate_public_ip_address = true
+# resource "aws_instance" "public_instance" {
+#   ami           = "ami-05803413c51f242b7"
+#   instance_type = "t2.micro"
+#   subnet_id = "${aws_subnet.public_subnet.id}"
+#   key_name = "abc"
+#   #need one instance
+#   count = 1
+#   vpc_security_group_ids = ["${aws_security_group.security_group.id}"]
+#   associate_public_ip_address = true
   
-}
+# }
 resource "aws_instance" "private_instance" {
   ami           = "ami-05803413c51f242b7"
   instance_type = "t2.micro"
