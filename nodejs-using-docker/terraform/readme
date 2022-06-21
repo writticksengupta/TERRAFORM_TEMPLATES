@@ -1,0 +1,5 @@
+#save .pem file at /home
+
+chmod 400 abc.pem 
+ssh -i abc.pem ubuntu@3.17.25.180
+ssh-keygen -t ed25519
