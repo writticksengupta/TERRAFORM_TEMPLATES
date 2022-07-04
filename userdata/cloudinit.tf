@@ -10,6 +10,7 @@ data "template_file" "shell-script" {
   DEVICE = var.instance_device_name
   }
   }
+  data "template_cloudinit_config" "cloudinit-example" { 
   gzip = false
   base64_encode = false
   part{
