@@ -1,1 +1,3 @@
 ssh-keygen -f mykey
+#to login
+ssh -i mykey ubuntu@ <public ip>
