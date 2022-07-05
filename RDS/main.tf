@@ -21,7 +21,7 @@ resource "aws_db_instance" "mariadb" {
   identifier = "mariadb"
   name = "mariadb"
   username = "root"
-  password = "abcde"
+  password = var.RDS_PASSWORD
   db_subnet_group_name = aws_db_subnet_group.mariadb-subnet.name
   parameter_group_name = "mariadb-parameters"
   multi_az = "false"
