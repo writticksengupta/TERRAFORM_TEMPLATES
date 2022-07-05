@@ -3,3 +3,4 @@ steps to create RDS
 2) create parameter group- allows you to specify parameters to change settings in the database
 3) create a security group that allows incoming traffic to the RDS instance
 4) create RDS itself 
+5) terraform apply -var RDS_PASSWORD=mypass123 (runtime password if set on main.tf)
