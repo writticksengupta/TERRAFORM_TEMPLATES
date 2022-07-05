@@ -1,0 +1,5 @@
+steps to create RDS
+1) create subnet group- allows you to specify in what subnets the database will be in (eg-eu-west-1a and eu-west-1b)
+2) create parameter group- allows you to specify parameters to change settings in the database
+3) create a security group that allows incoming traffic to the RDS instance
+4) create RDS itself 
