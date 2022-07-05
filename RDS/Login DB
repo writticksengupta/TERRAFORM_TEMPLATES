@@ -1,0 +1,4 @@
+#login to the instance
+sudo apt-get install mysql-client 
+#login to DB
+mysql -u root -h <hostname> -p '<password either static(abcde) or variable (in runtime)>'
