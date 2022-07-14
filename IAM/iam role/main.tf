@@ -1,4 +1,5 @@
- resource "aws_iam_role" "s3-mybucket-role" {
+#create a role and instance profile for instance
+resource "aws_iam_role" "s3-mybucket-role" {
    name = "s3-mybucket-role"
    assume_role_policy=<<EOF
    {
